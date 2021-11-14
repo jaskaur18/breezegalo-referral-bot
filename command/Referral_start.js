@@ -37,11 +37,7 @@ module.exports = () => async (ctx) => {
                 Referral_parrent: Referral_parent,
                 Referral_link: `https://t.me/${ctx.me}?start=${ctx.from.id}`
             });
-            await db.collection("userdata").updateOne({ _id: Number(Referral_parent) }, {
-                $inc: {
-                    Referral: 1
-                }
-            })
+     
             ctx.telegram.sendMessage(Referral_parent, `
             New User ${ctx.from.first_name} ${ctx.from.last_name} (${ctx.from.id}) Joined From Your Referral Link
             `)
