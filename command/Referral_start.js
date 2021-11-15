@@ -37,10 +37,7 @@ module.exports = () => async (ctx) => {
                 Referral_parrent: Referral_parent,
                 Referral_link: `https://t.me/${ctx.me}?start=${ctx.from.id}`
             });
-     
-            ctx.telegram.sendMessage(Referral_parent, `
-            New User ${ctx.from.first_name} ${ctx.from.last_name} (${ctx.from.id}) Joined From Your Referral Link
-            `)
+
             await ctx.reply(
                 "Welcome to the Referral contest. The top 20 by the end of the deadline will be granted a whitelist spot!",
                 main_keyboard
