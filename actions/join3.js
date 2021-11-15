@@ -8,10 +8,12 @@ module.exports = async (ctx) => {
     joined = await ctx.telegram.getChatMember(process.env.Group_id_two ,ctx.from.id );
     console.log(joined)
     if (joined.status == "left")
-        return ctx.answerCbQuery("You Didn't Joined Group!!! ❌", (alert = true));
+        return ctx.answerCbQuery("You did not join the Group!!! ❌", (alert = true));
     ctx.deleteMessage().catch((err) => console.log(err));
-    ctx.answerCbQuery("You Joined Group!!! ✅", (alert = true)).catch(err => errorHandler(err, ctx))
-    await ctx.reply("Message Here Explain About The Project", keyboard).catch(err => errorHandler(err, ctx))
+    ctx.answerCbQuery("Thank you for join the Group!!! ✅", (alert = true)).catch(err => errorHandler(err, ctx))
+    await db.collection("userdata").updateOne({ _id: ctx.from.id },
+        { $set: { joined_group: true } })
+    await ctx.reply("Welcome to FlokiZap", keyboard).catch(err => errorHandler(err, ctx))
 
 
 }

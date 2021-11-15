@@ -11,5 +11,5 @@ module.exports = () => async (ctx) => {
     ctx.reply(`
 Your current wallet address is:  ${user.wallet_address}
 
-/changewallet To Change Wallet Address`).catch(err => errorHandler(err, ctx))
+/changewallet To change your Wallet Address`).catch(err => errorHandler(err, ctx))
 }

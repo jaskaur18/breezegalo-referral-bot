@@ -9,8 +9,7 @@ module.exports = () => async (ctx) => {
 /changewallet To Change Wallet Address    `)
     await ctx.reply("Message Here Explain About The Project", keyboard).catch(err => errorHandler(err, ctx))
 
-    await db.collection("userdata").updateOne({ _id: ctx.from.id },
-        { $set: { joined_group: true, wallet_address: ctx.message.text } })
+    
 
     ctx.scene.leave()
 }

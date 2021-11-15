@@ -18,11 +18,11 @@ module.exports = () => async (ctx) => {
                 canjoin = user_exits.joined_group;
                 if (canjoin == false)
                     return ctx.reply(
-                        `Join These Group To Continue`,
+                        `Join our Main Chat To Continue`,
                         main_keyboard
                     );
                 return ctx.reply(
-                    "Hey and welcome to the Charmander token !!!With this bot you have the chance to win a big Coinairdrop (Top 50 counts).",
+                    "Welcome to the Referral contest. The top 20 by the end of the deadline will be granted a whitelist spot!",
                     keyboard
                 );
             }
@@ -42,7 +42,7 @@ module.exports = () => async (ctx) => {
             New User ${ctx.from.first_name} ${ctx.from.last_name} (${ctx.from.id}) Joined From Your Referral Link
             `)
             await ctx.reply(
-                "Hey and welcome to the Charmander token !!!With this bot you have the chance to win a big Coinairdrop (Top 50 counts).",
+                "Welcome to the Referral contest. The top 20 by the end of the deadline will be granted a whitelist spot!",
                 main_keyboard
             );
         } catch (err) {
